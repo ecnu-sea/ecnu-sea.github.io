@@ -53,17 +53,41 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">The SEA Framework for Peer Reviewing: Standardization, Evalutaion, and Analysis</h1>
+            <h1 class="title is-1 publication-title">Automated Peer Reviewing in Paper SEA: Standardization, Evaluation, and Analysis</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
                 <a href="https://jianxiangyu.github.io/" target="_blank">Jianxiang Yu</a><sup>1*</sup>,</span>
                 <span class="author-block">
                   <a href="https://scholar.google.com/citations?user=N4NNsRMAAAAJ&hl=zh-CN&oi=sra" target="_blank">Zichen Ding</a><sup>1*</sup>,</span>
+                  <span class="author-block">
+                    <a href="https://scholar.google.com.hk/citations?hl=zh-CN&user=0gClxMMAAAAJ" target="_blank">Jiaqi Tan</a><sup>1</sup>,</span>
+                    <span class="author-block">
+                      <a href="https://scholar.google.com/citations?user=zX3lxSMAAAAJ&hl=zh-CN&oi=ao" target="_blank">Kangyang Luo</a><sup>1</sup>,</span>
+                      <span class="author-block">
+                        <a href="https://scholar.google.com/citations?user=N4NNsRMAAAAJ&hl=zh-CN&oi=sra" target="_blank">Zhenmin Weng</a><sup>1</sup>,</span>
+                        <span class="author-block">
+                          <a href="https://scholar.google.com/citations?user=N4NNsRMAAAAJ&hl=zh-CN&oi=sra" target="_blank">Chenghua Gong</a><sup>1</sup>,</span>
+                          <span class="author-block">
+                            <a href="https://scholar.google.com/citations?user=N4NNsRMAAAAJ&hl=zh-CN&oi=sra" target="_blank">Long Zeng</a><sup>1</sup>,</span>
+                            <span class="author-block">
+                              <a href="https://scholar.google.com/citations?user=N4NNsRMAAAAJ&hl=zh-CN&oi=sra" target="_blank">Renjing Cui</a><sup>1</sup>,</span>
+                              <span class="author-block">
+                                <a href="https://hccngu.github.io/" target="_blank">Chengcheng Han</a><sup>1</sup>,</span>
+                                <span class="author-block">
+                                  <a href="https://qiushisun.github.io/" target="_blank">Qiushi Sun</a><sup>2</sup>,</span>
+                                  <span class="author-block">
+                                    <a href="https://lividwo.github.io/zywu.github.io/" target="_blank">Zhiyong Wu</a><sup>2</sup>,</span>
+                                    <span class="author-block">
+                                      <a href="https://lanyunshi.github.io/" target="_blank">Yunshi Lan</a><sup>1</sup>,</span>
+                                      <span class="author-block">
+                                        <a href="https://lixiang3776.github.io/" target="_blank">Xiang Li</a><sup>1</sup>,</span>
+                                                           
                   </div>
                   <div class="is-size-5 publication-authors">
                     <span class="author-block">
-                      <sup>1</sup>East China Normal University
+                      <sup>1</sup>East China Normal University,
+                      <sup>2</sup>Shanghai AI Lab
                     <span class="eql-cntrb"><small><br><sup>*</sup>Equal contribution</small></span>
                   </div>
 
@@ -150,7 +174,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            In recent years, the rapid increase in scientific publications has overwhelmed traditional review mechanisms, resulting in varying quality of publications. Although existing methods have explored the capabilities of Large Language Models (LLMs) for automated scientific reviewing, their generated contents often fall short of human standards or exhibit bias. To address the issues above, we introduce an automated paper reviewing framework named SEA. SEA comprises three modules: Standardization, Evaluation, and Analysis, represented by models SEA-S, SEA-E, and SEA-A respectively. Initially, SEA-S distills GPT-4’s data standardization capabilities for integrating multiple reviews per paper. Subsequently, SEA-E utilizes these standardized data for further fine-tuning, enabling it to generate both high quality and comprehensive reviews. Finally, SEA-A employs a regression model and introduces a new evaluation metric called mismatch score to assess the consistency between paper content and reviews. Moreover, we design a self-correction strategy to further improve this consistency. Extensive experimental results on datasets collected from eight venues show that SEA can generate valuable insights for authors to improve their papers.
+            In recent years, the rapid increase in scientific papers has overwhelmed traditional review mechanisms, resulting in varying quality of publications. Although existing methods have explored the capabilities of Large Language Models (LLMs) for automated scientific reviewing, their generated contents are often generic or partial. To address the issues above, we introduce an automated paper reviewing framework SEA. It comprises of three modules: Standardization, Evaluation, and Analysis, which are represented by models SEA-S, SEA-E, and SEA-A, respectively. Initially, SEA-S distills data standardization capabilities of GPT-4 for integrating multiple reviews for a paper. Then, SEA-E utilizes standardized data for fine-tuning, enabling it to generate constructive reviews. Finally, SEA-A introduces a new evaluation metric called mismatch score to assess the consistency between paper contents and reviews. Moreover, we design a self-correction strategy to enhance the consistency. Extensive experimental results on datasets collected from eight venues show that SEA can generate valuable insights for authors to improve their papers.
           </p>
         </div>
         <div class="content">
@@ -217,7 +241,7 @@
         </div>
         <div class="content has-text-justified">
           <p>
-            The overall framework of SEA consists of three modules, Standardization, Evaluation and Analysis.
+            The overall framework of SEA consists of three modules, <b><u>S</u></b>tandardization, <b><u>E</u></b>valuation and <b><u>A</u></b>nalysis.
           </p>
         </div>
         <h2 class="title is-4"> SEA-S: Standardization</h2>
@@ -259,12 +283,13 @@
         </div>
         <div class="content">
           <div class=" has-text-centered">
-            <img src="static/images/gaia_result.png" width="600" alt="MY ALT TEXT"/>
+            <img src="static/images/main_result.png" width="800" alt="MY ALT TEXT"/>
           </div>
           <div class="subtitle is-size-6">
             <b>Evaluation Results</b>.All results are reported on the private test set, except for the Human score, which is averaged across the dev and test sets.
           </div>
         </div>
+
       
         <!-- <div class="content">
           <div class=" has-text-centered">
@@ -274,13 +299,13 @@
             <b>Scores (%) of FRIDAY on level-1 tasks per capability.</b>Numbers except FRIDAY are sourced from GAIA paper. As confirmed by GAIA’s authors, there are some numerical errors in GAIA’s Figure 5, so we omit the comparison with baselines here.
           </div>
         </div> -->
-        <h2 class="title is-4">Self-directed Learning</h2>
+        <h2 class="title is-4">Comparison of Standardized Results</h2>
         <div class="content has-text-justified">
           <p>
             We perform quantitative and qualitative evaluations to analysis FRIDAY’s self-directed learning capability.
           </p>
         </div>
-        <h2 class="title is-5">QUANTITATIVE ANALYSIS</h2>
+        <h2 class="title is-5">Content analysis</h2>
         <div class="content has-text-justified">
           <p>
             To showcase FRIDAY’s ability to master unfamiliar applications through self-learning, we conduct experiments on the SheetCopilot-20 dataset.This dataset includes 20 spreadsheet control tasks, covering various operations such as Formatting, Management, Charts, Pivot Tables, and Formulas, representing typical use cases of spreadsheets.
@@ -288,34 +313,27 @@
         </div>
         <div class="content">
           <div class=" has-text-centered">
-            <img src="static/images/quantitative_study.png" width="550" alt="MY ALT TEXT"/>
+            <img src="static/images/sea-s.png" width="550" alt="MY ALT TEXT"/>
           </div>
           <div class="subtitle is-size-6">
             <b>Comparison of different agents on the SheetCopilot-20 dataset.</b>Pass@1 refers to the pass rate with each task being performed only once.We highlight the best results in bold.
           </div>
         </div>
-        <h2 class="title is-5">QUALITATIVE ANALYSIS</h2>
-        <div class="container is-max-desktop" style="margin-bottom: 20px;">  
-          <div class="columns">  
-              <div class="column is-4">
-                  <div class="image">    
-                      <img src="static/images/ppt0.png" alt="Image 1"> 
-                    </div> 
-                  <p style="margin: 10px 0;" class="subtitle is-6 has-text-centered">(a) FRIDAY <b>w/o self-directed learning.</b></p>  
-              </div>
-              <div class="column is-4">
-                <div class="image">    
-                  <img src="static/images/ppt1.png" alt="Image 1"> 
-                </div> 
-              <p style="margin: 10px 0;" class="subtitle is-6 has-text-centered">(b) FRIDAY <b>after learning text box control.</b></p>  
-              </div>  
-              <div class="column is-4">  
-                  <div class="image">  
-                      <img src="static/images/ppt2.png"  alt="Image 2">  
-                  </div>  
-                  <p style="margin: 10px 0;" class="subtitle is-6 has-text-centered">(c) FRIDAY <b>after mastering image insertion.</b></p>  
-              </div>  
-          </div>  
+        <h2 class="title is-5">Format analysis</h2>
+        <div class="content has-text-justified">
+          <p>
+            To showcase FRIDAY’s ability to master unfamiliar applications through self-learning, we conduct experiments on the SheetCopilot-20 dataset.This dataset includes 20 spreadsheet control tasks, covering various operations such as Formatting, Management, Charts, Pivot Tables, and Formulas, representing typical use cases of spreadsheets.
+          </p>
+        </div>
+        <div class="content">
+          <div class=" has-text-centered">
+            <img src="static/images/sea-s_format.png" width="550" alt="MY ALT TEXT"/>
+          </div>
+          <div class="subtitle is-size-6">
+            <b>Comparison of different agents on the SheetCopilot-20 dataset.</b>Pass@1 refers to the pass rate with each task being performed only once.We highlight the best results in bold.
+          </div>
+        </div>
+
         <div class="content has-text-justified">
           <p>
             In our qualitative analysis, we design a task to create a PowerPoint slide to introduce OS-Copilot. The specific content, font, font size, and other details required for the slide are elaborately described in the task instruction.
@@ -333,13 +351,27 @@
               FRIDAY <b>w/o self-directed learning.</b>
             </div>
           </div> -->
+
+          <h2 class="title is-4">Mismatch Score in SEA-A</h2>
+          <div class="content has-text-justified">
+            <p>
+              We evaluate FRIDAY on GAIA, a benchmark for general AI assistants featuring 466 challenging question-answering tasks. To answer questions in GAIA, language agents need skills to calculate, browse the web, handle multi-modality, and manipulate files, etc.
+            </p>
+          </div>
+          <div class="content">
+            <div class=" has-text-centered">
+              <img src="static/images/mms_metric.png" width="800" alt="MY ALT TEXT"/>
+            </div>
+            <div class="subtitle is-size-6">
+              <b>Evaluation Results</b>.All results are reported on the private test set, except for the Human score, which is averaged across the dev and test sets.
+            </div>
+          </div>
+  
           
         </div>
-        <div class="content has-text-justified">
-          <p>
-            Nevertheless, following a period of self-directed learning, FRIDAY acquires various text box configuration tools, such as changing the text color, adjusting the font size of slide text, and modifying the line spacing of body text in PowerPoint presentations, as illustrated in Figure (b).
-          </p>
-        </div>
+
+        
+     
         <!-- <div class="content">
           <div class=" has-text-centered">
             <img src="static/images/ppt1.png"  alt="MY ALT TEXT"/>
@@ -349,12 +381,7 @@
           </div>
           
         </div> -->
-        <div class="content has-text-justified">
-          <p>
-            Further exploration leads FRIDAY to learn how to adjust the size and position of inserted images, ultimately successfully completing the task, as depicted in Figure (c).
-          </p>
-          
-        </div>
+   
         <!-- <div class="content">
           <div class=" has-text-centered">
             <img src="static/images/ppt2.png"  alt="MY ALT TEXT"/>
